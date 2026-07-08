@@ -1,0 +1,171 @@
+:root {
+  color-scheme: dark;
+  --bg: #222;
+  --fg: #eee;
+  --dim: #aaa;
+  --rule: #444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: .93rem/1.6 "Fira Code", monospace;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: .2em;
+  text-decoration-color: var(--rule);
+}
+
+main {
+  width: min(920px, calc(100% - 2.5rem));
+  margin: 5rem auto;
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow,
+h2,
+.organization,
+.date,
+dt { color: var(--dim); }
+
+.eyebrow,
+h2 {
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.eyebrow { margin: 0 0 .5rem; }
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 9vw, 5.6rem);
+  letter-spacing: -.07em;
+  line-height: .95;
+}
+
+.summary {
+  max-width: 58ch;
+  margin: 1.5rem 0 0;
+}
+
+.contact {
+  display: grid;
+  gap: .25rem;
+  padding-top: 1.5rem;
+  font-style: normal;
+}
+
+section { margin-top: 3rem; }
+
+h2 { margin: 0 0 1.5rem; }
+h2::before { content: "// "; }
+
+.entry + .entry { margin-top: 2rem; }
+
+.entry-header {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+h3,
+.entry-header p,
+.description,
+.project p,
+.education p { margin: 0; }
+
+h3 { font-size: 1rem; }
+
+.date,
+.project-link {
+  flex: none;
+  font-size: .82rem;
+}
+
+ul {
+  max-width: 76ch;
+  margin: .75rem 0 0;
+  padding-left: 1.5rem;
+}
+
+li + li { margin-top: .35rem; }
+.description { max-width: 76ch; margin-top: .35rem; }
+.project p { max-width: 76ch; margin-top: .5rem; }
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
+
+.skills { margin: 0; }
+
+.skills div {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+}
+
+.skills div + div { margin-top: .5rem; }
+dd { margin: 0; }
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+}
+
+.contact-row span { color: var(--dim); }
+
+@media (max-width: 700px) {
+  main { margin: 2.5rem auto; }
+
+  .masthead,
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .masthead { padding-bottom: 2rem; }
+  .contact { padding-top: 0; }
+  section { margin-top: 2.5rem; }
+}
+
+@media print {
+  @page { size: letter; margin: .55in .62in; }
+
+  :root {
+    color-scheme: light;
+    --bg: #fff;
+    --fg: #000;
+    --dim: #333;
+    --rule: #bbb;
+  }
+
+  body { font-size: 10.3pt; line-height: 1.4; }
+  main { width: 100%; margin: 0; }
+  .masthead { gap: .35in; padding-bottom: .2in; }
+  h1 { font-size: 36pt; }
+  section { margin-top: .2in; }
+  h2 { margin-bottom: .08in; }
+  .entry + .entry { margin-top: .12in; }
+  ul { margin-top: .04in; }
+  .two-column { gap: .35in; }
+  a { text-decoration: none; }
+
+  article,
+  section { break-inside: avoid; }
+}
