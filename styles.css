@@ -4,6 +4,8 @@
   --fg: #eee;
   --dim: #aaa;
   --rule: #444;
+  --link: #75c1e2;
+  --link-rule: #357fa0;
 }
 
 * { box-sizing: border-box; }
@@ -16,9 +18,9 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link);
   text-underline-offset: .2em;
-  text-decoration-color: var(--rule);
+  text-decoration-color: var(--link-rule);
 }
 
 main {
@@ -153,6 +155,8 @@ dd { margin: 0; }
     --fg: #000;
     --dim: #333;
     --rule: #bbb;
+    --link: #000;
+    --link-rule: #bbb;
   }
 
   body { font-size: 10.3pt; line-height: 1.4; }
