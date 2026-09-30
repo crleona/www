@@ -42,6 +42,11 @@ h2,
 .date,
 dt { color: var(--dim); }
 
+.organization a {
+  color: var(--dim);
+  text-decoration: none;
+}
+
 .eyebrow,
 h2 {
   font-size: .78rem;
@@ -132,6 +137,8 @@ dd { margin: 0; }
 
 .contact-row span { color: var(--dim); }
 
+.print-footer { display: none; }
+
 @media (max-width: 700px) {
   main { margin: 2.5rem auto; }
 
@@ -168,7 +175,17 @@ dd { margin: 0; }
   .entry + .entry { margin-top: .12in; }
   ul { margin-top: .04in; }
   .two-column { gap: .35in; }
-  a { text-decoration: none; }
+  a { color: inherit; text-decoration: none; }
+  .screen-only { display: none; }
+  .print-footer {
+    display: block;
+    margin-top: .2in;
+    padding-top: .08in;
+    border-top: 1px solid var(--rule);
+    color: var(--dim);
+    font-size: 9pt;
+    break-inside: avoid;
+  }
 
   article { break-inside: avoid; }
 }
